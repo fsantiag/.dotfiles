@@ -53,6 +53,9 @@ call plug#end()
 
 filetype plugin indent on
 
+" turn on wildmenu
+set wildmenu
+
 " encoding
 set encoding=utf-8
 set fileencoding=utf-8
