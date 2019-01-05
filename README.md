@@ -1,2 +1,2 @@
 # dotfiles
-> My personal collection of dotfile.
+> My personal collection of dotfiles.
