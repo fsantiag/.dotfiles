@@ -110,6 +110,8 @@ nnoremap <silent> <S-w> :tabclose<CR>
 " set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
+map <leader>ss :setlocal spell!<cr>
+
 "*******************
 "* visual settings *
 "*******************
