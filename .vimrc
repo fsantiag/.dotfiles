@@ -66,10 +66,10 @@ set ttyfast
 " fix backspace indent
 set backspace=indent,eol,start
 
-" tabs. May be overriten by autocmd rules
+" 1 tab = 4 spaces
 set tabstop=4
-set softtabstop=0
 set shiftwidth=4
+" spaces instead of tabs
 set expandtab
 
 " map leader to ,
