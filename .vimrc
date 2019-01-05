@@ -32,13 +32,11 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
-Plug 'djoshea/vim-autoread'
 Plug 'airblade/vim-gitgutter'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
-Plug 'djoshea/vim-autoread'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips'
@@ -52,6 +50,8 @@ call plug#end()
 "*******************
 
 filetype plugin indent on
+
+set autoread
 
 " turn on wildmenu
 set wildmenu
@@ -144,7 +144,7 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 " fzf
 nnoremap <silent> <leader>f :FZF<CR>
 
-" git
+" vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gsh :Gpush<CR>
@@ -153,6 +153,10 @@ noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
+
+" git-gutter
+" update on save
+autocmd BufWritePost * GitGutter
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
