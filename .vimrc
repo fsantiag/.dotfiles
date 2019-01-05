@@ -72,9 +72,6 @@ set expandtab
 " map leader to ,
 let mapleader=','
 
-" enable hidden buffers
-set hidden
-
 " searching
 set hlsearch
 set incsearch
