@@ -173,6 +173,10 @@ let g:syntastic_style_warning_symbol = 'w'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 
+" lightline
+" don't show the mode at the botton
+set noshowmode
+
 " tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
