@@ -176,6 +176,17 @@ let g:syntastic_aggregate_errors = 1
 " lightline
 " don't show the mode at the botton
 set noshowmode
+" show branch name
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 " tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
