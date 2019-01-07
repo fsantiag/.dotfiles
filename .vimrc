@@ -150,6 +150,9 @@ vnoremap K :m '<-2<CR>gv=gv
 "* plugins configs *
 "*******************
 
+" youcompleteme
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
 " make YCM compatible with UltiSnips
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
