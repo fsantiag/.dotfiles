@@ -38,6 +38,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" This plugin needs aditional setup: https://valloric.github.io/YouCompleteMe/#full-installation-guide
+" Plug 'valloric/youcompleteme'
 call plug#end()
 
 "*******************
@@ -126,6 +128,10 @@ set laststatus=2
 "* plugins configs *
 "*******************
 
+" make YCM compatible with UltiSnips
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
 " nerdtree
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
@@ -138,6 +144,9 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " fzf
 nnoremap <silent> <leader>f :FZF<CR>
+" Make sure to install fd first.
+" Exclude the same files as the .gitignore
+let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 " vim-fugitive
 noremap <Leader>ga :Gwrite<CR>
