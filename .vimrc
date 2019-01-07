@@ -124,6 +124,28 @@ endif
 " status bar
 set laststatus=2
 
+" use visualbell instead of sound bell
+set visualbell
+
+" prevent visual bell from flashing
+set t_vb=
+
+" move cursor to last place when reopening the file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" clean search (highlight)
+nnoremap <silent> <leader><space> :noh<cr>
+
+" vmap for maintain Visual Mode after shifting > and <
+vmap < <gv
+vmap > >gv
+
+" move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 "*******************
 "* plugins configs *
 "*******************
@@ -144,8 +166,8 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " fzf
 nnoremap <silent> <leader>f :FZF<CR>
-" Make sure to install fd first.
-" Exclude the same files as the .gitignore
+" make sure to install fd first.
+" exclude the same files as the .gitignore
 let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 " vim-fugitive
@@ -176,6 +198,7 @@ let g:syntastic_style_error_symbol = 'e'
 let g:syntastic_style_warning_symbol = 'w'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_checkers=['python', 'flake8']
 
 " lightline
 " don't show the mode at the botton
@@ -196,28 +219,6 @@ let g:lightline = {
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
-" use visualbell instead of sound bell
-set visualbell
-
-" prevent visual bell from flashing
-set t_vb=
-
-" move cursor to last place when reopening the file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-" clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
-
-" vmap for maintain Visual Mode after shifting > and <
-vmap < <gv
-vmap > >gv
-
-" move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
 " python
 augroup vimrc-python
   autocmd!
@@ -225,7 +226,3 @@ augroup vimrc-python
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
-
-" syntastic
-let g:syntastic_python_checkers=['python', 'flake8']
-
