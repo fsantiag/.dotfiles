@@ -206,9 +206,8 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['python', 'flake8']
 
-" vim-polyglot
-"" vim-mark-down
-set concealcursor=v "make line unconsealed when cursor is on it
+" indentLine
+let g:indentLine_concealcursor='c' "make line unconsealed when cursor is on it
 
 " lightline
 " don't show the mode at the botton
