@@ -104,6 +104,10 @@ nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
 nnoremap <silent> <S-w> :tabclose<CR>
 
+" buffers
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
 " set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
 
@@ -201,6 +205,10 @@ let g:syntastic_style_warning_symbol = 'w'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['python', 'flake8']
+
+" vim-polyglot
+"" vim-mark-down
+set concealcursor=v "make line unconsealed when cursor is on it
 
 " lightline
 " don't show the mode at the botton
