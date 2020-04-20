@@ -33,13 +33,13 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
+Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" This plugin needs aditional setup: https://valloric.github.io/YouCompleteMe/#full-installation-guide
-" Plug 'valloric/youcompleteme'
 call plug#end()
 
 "*******************
@@ -155,7 +155,7 @@ vnoremap K :m '<-2<CR>gv=gv
 "*******************
 
 " youcompleteme
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+" nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " make YCM compatible with UltiSnips
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
