@@ -40,7 +40,7 @@ Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'tomlion/vim-solidity'
+Plugin 'thesis/vim-solidity'
 call plug#end()
 
 "*******************
